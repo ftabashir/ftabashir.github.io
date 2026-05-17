@@ -2,6 +2,97 @@
   "events": [
     {
       "start_date": {
+        "year": "1905",
+        "month": "12",
+        "day": "12"
+      },
+      "text": {
+        "headline": "Persian Constitutional Revolution Begins",
+        "text": "Widespread protests against the Qajar monarchy lead to the establishment of Iran's first parliament (Majlis) and a constitution. <a href='https://en.wikipedia.org/wiki/Persian_Constitutional_Revolution'>Wikipedia</a>"
+      },
+      "tag": "revolution",
+      "tier": 1
+    },
+    {
+      "start_date": {
+        "year": "1908",
+        "month": "5",
+        "day": "26"
+      },
+      "text": {
+        "headline": "Discovery of Oil",
+        "text": "The first major oil strike in the Middle East occurs in Masjed Soleyman, fundamentally changing Iran's economic and political future. <a href='https://en.wikipedia.org/wiki/History_of_the_oil_industry_in_Iran'>Wikipedia</a>"
+      },
+      "tag": "economy",
+      "tier": 2
+    },
+    {
+      "start_date": {
+        "year": "1921",
+        "month": "2",
+        "day": "21"
+      },
+      "text": {
+        "headline": "1921 Coup d'état",
+        "text": "Reza Khan and Zia'eddin Tabatabaee seize power in a coup, paving the way for the end of the Qajar dynasty. <a href='https://en.wikipedia.org/wiki/1921_Persian_coup_d%27%C3%A9tat'>Wikipedia</a>"
+      },
+      "tag": "coup",
+      "tier": 1
+    },
+    {
+      "start_date": {
+        "year": "1925",
+        "month": "12",
+        "day": "15"
+      },
+      "text": {
+        "headline": "Rise of the Pahlavi Dynasty",
+        "text": "Reza Khan is crowned Reza Shah Pahlavi, beginning a period of rapid modernization and secularization. <a href='https://en.wikipedia.org/wiki/Reza_Shah'>Wikipedia</a>"
+      },
+      "tag": "monarchy",
+      "tier": 1
+    },
+    {
+      "start_date": {
+        "year": "1941",
+        "month": "8",
+        "day": "25"
+      },
+      "text": {
+        "headline": "Anglo-Soviet Invasion of Iran",
+        "text": "Allied forces invade Iran during WWII to secure oil supply routes. Reza Shah is forced to abdicate in favor of his son. <a href='https://en.wikipedia.org/wiki/Anglo-Soviet_invasion_of_Iran'>Wikipedia</a>"
+      },
+      "tag": "war",
+      "tier": 1
+    },
+    {
+      "start_date": {
+        "year": "1953",
+        "month": "8",
+        "day": "19"
+      },
+      "text": {
+        "headline": "1953 Coup d'état (Operation Ajax)",
+        "text": "A CIA-backed coup overthrows the democratically elected Prime Minister Mohammad Mossadegh after he nationalized the oil industry. <a href='https://en.wikipedia.org/wiki/1953_Iranian_coup_d%27%C3%A9tat'>Wikipedia</a>"
+      },
+      "tag": "coup",
+      "tier": 1
+    },
+    {
+      "start_date": {
+        "year": "1963",
+        "month": "6",
+        "day": "5"
+      },
+      "text": {
+        "headline": "15 Khordad Uprising",
+        "text": "Protests against the Shah's White Revolution lead to the arrest of Ayatollah Khomeini and a violent crackdown. <a href='https://en.wikipedia.org/wiki/15_Khordad_uprising'>Wikipedia</a>"
+      },
+      "tag": "protest",
+      "tier": 2
+    },
+    {
+      "start_date": {
         "year": "1979",
         "month": "2",
         "day": "11"
@@ -15,16 +106,120 @@
     },
     {
       "start_date": {
+        "year": "1979",
+        "month": "11",
+        "day": "4"
+      },
+      "text": {
+        "headline": "Iran Hostage Crisis Begins",
+        "text": "Iranian students seize the U.S. Embassy in Tehran, holding 52 Americans hostage for 444 days. <a href='https://en.wikipedia.org/wiki/Iran_hostage_crisis'>Wikipedia</a>"
+      },
+      "tag": "international",
+      "tier": 1
+    },
+    {
+      "start_date": {
+        "year": "1980",
+        "month": "9",
+        "day": "22"
+      },
+      "text": {
+        "headline": "Iran-Iraq War Begins",
+        "text": "Iraq invades Iran, starting a brutal eight-year conflict that remains one of the deadliest wars in modern history. <a href='https://en.wikipedia.org/wiki/Iran%E2%80%93Iraq_War'>Wikipedia</a>"
+      },
+      "tag": "war",
+      "tier": 1
+    },
+    {
+      "start_date": {
+        "year": "1989",
+        "month": "6",
+        "day": "3"
+      },
+      "text": {
+        "headline": "Death of Ayatollah Khomeini",
+        "text": "The founder of the Islamic Republic dies; Ali Khamenei is subsequently appointed the new Supreme Leader. <a href='https://en.wikipedia.org/wiki/Death_and_state_funeral_of_Ruhollah_Khomeini'>Wikipedia</a>"
+      },
+      "tag": "leadership",
+      "tier": 1
+    },
+    {
+      "start_date": {
+        "year": "1997",
+        "month": "5",
+        "day": "23"
+      },
+      "text": {
+        "headline": "Election of Mohammad Khatami",
+        "text": "A reformist landslide victory signals a period of attempted social and political liberalization. <a href='https://en.wikipedia.org/wiki/1997_Iranian_presidential_election'>Wikipedia</a>"
+      },
+      "tag": "election",
+      "tier": 2
+    },
+    {
+      "start_date": {
         "year": "2009",
         "month": "6",
         "day": "12"
       },
       "text": {
         "headline": "Green Movement Protests",
-        "text": "Massive protests erupt following the disputed presidential election results. <a href='https://en.wikipedia.org/wiki/Iranian_Green_Movement'>Wikipedia</a>"
+        "text": "Massive protests erupt following the disputed presidential election results, the largest civil unrest since 1979. <a href='https://en.wikipedia.org/wiki/Iranian_Green_Movement'>Wikipedia</a>"
       },
       "tag": "protest",
-      "tier": 2
+      "tier": 1
+    },
+    {
+      "start_date": {
+        "year": "2015",
+        "month": "7",
+        "day": "14"
+      },
+      "text": {
+        "headline": "JCPOA Nuclear Deal Signed",
+        "text": "Iran and world powers reach a landmark agreement to limit Iran's nuclear program in exchange for sanctions relief. <a href='https://en.wikipedia.org/wiki/Joint_Comprehensive_Plan_of_Action'>Wikipedia</a>"
+      },
+      "tag": "international",
+      "tier": 1
+    },
+    {
+      "start_date": {
+        "year": "2020",
+        "month": "1",
+        "day": "3"
+      },
+      "text": {
+        "headline": "Assassination of Qasem Soleimani",
+        "text": "A U.S. drone strike kills Iran's top military commander in Baghdad, leading to a major spike in regional tensions. <a href='https://en.wikipedia.org/wiki/Assassination_of_Qasem_Soleimani'>Wikipedia</a>"
+      },
+      "tag": "international",
+      "tier": 1
+    },
+    {
+      "start_date": {
+        "year": "2022",
+        "month": "9",
+        "day": "16"
+      },
+      "text": {
+        "headline": "Death of Mahsa Amini",
+        "text": "The death of a young woman in morality police custody sparks the 'Woman, Life, Freedom' nationwide protest movement. <a href='https://en.wikipedia.org/wiki/Mahsa_Amini_protests'>Wikipedia</a>"
+      },
+      "tag": "protest",
+      "tier": 1
+    },
+    {
+      "start_date": {
+        "year": "2024",
+        "month": "5",
+        "day": "19"
+      },
+      "text": {
+        "headline": "Death of Ebrahim Raisi",
+        "text": "President Ebrahim Raisi and Foreign Minister Hossein Amir-Abdollahian die in a helicopter crash in East Azerbaijan. <a href='https://en.wikipedia.org/wiki/2024_Varzaqan_helicopter_crash'>Wikipedia</a>"
+      },
+      "tag": "leadership",
+      "tier": 1
     }
   ]
 }
