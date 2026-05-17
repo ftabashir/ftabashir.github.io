@@ -1,0 +1,30 @@
+{
+  "events": [
+    {
+      "start_date": {
+        "year": "1979",
+        "month": "2",
+        "day": "11"
+      },
+      "text": {
+        "headline": "Islamic Revolution",
+        "text": "The Pahlavi dynasty falls, and the Islamic Republic of Iran is established under Ayatollah Ruhollah Khomeini. <a href='https://en.wikipedia.org/wiki/Iranian_Revolution'>Wikipedia</a>"
+      },
+      "tag": "revolution",
+      "tier": 1
+    },
+    {
+      "start_date": {
+        "year": "2009",
+        "month": "6",
+        "day": "12"
+      },
+      "text": {
+        "headline": "Green Movement Protests",
+        "text": "Massive protests erupt following the disputed presidential election results. <a href='https://en.wikipedia.org/wiki/Iranian_Green_Movement'>Wikipedia</a>"
+      },
+      "tag": "protest",
+      "tier": 2
+    }
+  ]
+}
