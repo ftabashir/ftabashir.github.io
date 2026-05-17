@@ -45,7 +45,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Fetch all selected JSON files
-    Promise.all(selectedUrls.map(url => fetch(url).then(res => res.json())))
+    Promise.all(selectedUrls.map(url => fetch(url).then(res => {
+      if (!res.ok) throw new Error("Network response was not ok: " + res.statusText);
+      return res.json();
+    })))
       .then(datasets => {
         let mergedEvents = [];
         datasets.forEach(data => {
