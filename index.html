@@ -6,13 +6,13 @@
     <title>Farzad Tabashir — Senior Android Engineer</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Senior Android Engineer with 11+ years of experience building high-scale mobile applications, maps/location systems, and robust Clean Architecture. Based in Berlin, Germany.">
-    <meta name="keywords" content="Android, Kotlin, Jetpack Compose, Senior Android Engineer, Berlin, Germany, Delivery Hero, Balad Maps, Mobile Developer">
+    <meta name="description" content="Senior Android Engineer with 11+ years of experience building high-scale Android applications, mobile architecture, performance, and maps/location systems. Based in Berlin, Germany.">
+    <meta name="keywords" content="Android, Kotlin, Jetpack Compose, Senior Android Engineer, Berlin, Germany, Delivery Hero, Balad Maps, Mobile Architecture, GraphQL">
     <meta name="author" content="Farzad Tabashir">
     
     <!-- Open Graph / Social -->
     <meta property="og:title" content="Farzad Tabashir — Senior Android Engineer">
-    <meta property="og:description" content="Senior Android Engineer with 11+ years of experience. Strong in Kotlin, Jetpack Compose, and maps/location systems.">
+    <meta property="og:description" content="Senior Android Engineer with 11+ years of experience. Strong in Kotlin, Jetpack Compose, mobile architecture, performance, and maps/location systems.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ftabashir.github.io">
     
@@ -432,6 +432,33 @@
             margin-bottom: 0.75rem;
         }
 
+        .company-logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--card-border);
+            padding: 4px;
+            flex-shrink: 0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        :root.light .company-logo {
+            background: rgba(0, 0, 0, 0.04);
+        }
+
+        .timeline-item:hover .company-logo {
+            transform: scale(1.06);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .card-header-left {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
         .company-name {
             font-size: 1.25rem;
             color: var(--text-primary);
@@ -626,7 +653,7 @@
                 padding: 0 !important;
             }
 
-            .bg-blob, .controls, .social-links, footer, .card-skills {
+            .bg-blob, .controls, .social-links, footer, .card-skills, .company-logo {
                 display: none !important;
             }
 
@@ -899,7 +926,7 @@
             <section>
                 <h2 class="sidebar-section-title">Profile</h2>
                 <p class="profile-summary">
-                    Senior Android Engineer with <span id="years-of-experience">11</span>+ years of experience building consumer Android applications across food delivery, maps, mobility, travel, grocery, and AR. Strong in Kotlin, Jetpack Compose, Clean Architecture, maps/location experiences, performance optimization, and mentoring. Experienced in improving app quality, supporting modular Android codebases, and collaborating with cross-functional teams on products used by millions of users.
+                    Senior Android Engineer with <span id="years-of-experience">11</span>+ years of experience building consumer Android applications across food delivery, maps, mobility, travel, grocery, and AR. Strong in Kotlin, Jetpack Compose, Clean Architecture, performance optimization, maps/location experiences, GraphQL migrations, and quality automation. Proven record reducing app latency and API costs, strengthening modular codebases, and mentoring engineers on products used by millions of users.
                 </p>
             </section>
 
@@ -952,9 +979,9 @@
                 "Android", "Kotlin", "Java", "Android SDK", "Jetpack Compose",
                 "AndroidX", "Coroutines", "RxJava", "DataBinding", "LiveData",
                 "ViewModel", "Clean Architecture", "MVVM/MVP/MVI", "Flux/Redux",
-                "Modularization", "OOP Design Patterns", "Unit Testing",
-                "Performance Optimization", "Crash Analysis", "Code Review",
-                "Technical Mentoring", "Git", "Dagger2", "Mapbox",
+                "Modularization", "OOP Design Patterns", "Unit Testing", "Integration Testing",
+                "Snapshot Testing", "Performance Optimization", "Crash Analysis", "Code Review",
+                "Technical Mentoring", "Git", "Dagger2", "GraphQL", "CI/CD", "Sentry", "Mapbox",
                 "Android Location APIs", "Maps", "Navigation"
             ],
             experience: [
@@ -963,21 +990,26 @@
                     location: "Berlin, Germany",
                     role: "Senior Android Engineer",
                     period: "Dec 2022 - Present",
-                    desc: "Builds location, address, and map experiences in the Location Tribe for Delivery Hero brands serving 100M+ Google Play users across 21 countries.",
+                    logo: "./assets/logo/deliveryhero.webp",
+                    desc: "Builds Android experiences across location, vendor information, restaurant discovery, and quick-commerce surfaces for Delivery Hero brands serving 100M+ Google Play users across 21 countries.",
                     highlights: [
-                        "Mentors junior Android engineers through technical guidance, code reviews, and delivery support.",
-                        "Contributes to a cross-team initiative focused on improving application startup performance.",
-                        "Contributes to refactoring and modularization initiatives that improve code maintainability, scalability, and testability.",
-                        "Migrates map-related screens to Jetpack Compose and supports other squads adopting Compose patterns.",
-                        "Evaluates Android engineering candidates as a member of the technical interview committee."
+                        "Reduced home-screen loading delay by 2 seconds by refactoring location/snapping flows and deferring address UI until after home load.",
+                        "Reduced geolocator details API costs by 70% by eliminating unnecessary calls and introduced debouncing for search requests.",
+                        "Created a location SDK module, refactored address models, and modularized location dependencies to improve maintainability, testability, build performance, and code quality.",
+                        "Strengthened Android quality automation by contributing to Location Tribe unit-test coverage growth from ~20% to ~50% and improving automation ratio by 12% as the responsible owner.",
+                        "Led Compose support for an internal map SDK, co-authored the RFC, and migrated VendorInfo as the first consumer while monitoring a 50% rollout with no detected Sentry issues.",
+                        "Advanced GraphQL migration and tooling by implementing experiment tracking, integration tests, Time to Interact measurement, GraphQL mappings, and CI workflows for automatic query-manifest publishing.",
+                        "Resolved a critical Android release crash affecting 34,000 users and authored an incident report covering root cause, resolution, and prevention recommendations.",
+                        "Mentors Android engineers through pair programming, code reviews, onboarding support, and technical guidance; evaluates candidates as part of the technical interview committee."
                     ],
-                    skills: ["Android", "Kotlin", "Jetpack Compose", "Clean Architecture", "Modularization", "Unit Testing", "Performance Optimization", "Technical Mentoring"]
+                    skills: ["Android", "Kotlin", "Jetpack Compose", "Clean Architecture", "Modularization", "Unit Testing", "Integration Testing", "Snapshot Testing", "Performance Optimization", "Crash Analysis", "Technical Mentoring", "GraphQL", "CI/CD", "Sentry"]
                 },
                 {
                     company: "Balad Maps",
                     location: "Tehran, Iran",
                     role: "Senior Android Engineer",
                     period: "Jan 2020 - Dec 2022",
+                    logo: "./assets/logo/balad.png",
                     desc: "Built and maintained a high-quality maps and navigation application rated 4.6 on Google Play with 5M+ users and 4.5 on Cafe Bazaar with 20M+ users.",
                     highlights: [
                         "Worked as a Senior Android Engineer in a 100+ developer organization.",
@@ -985,7 +1017,7 @@
                         "Served on the technical recruitment committee to evaluate engineering candidates.",
                         "Mentored junior developers and supported their onboarding process.",
                         "Reviewed merge requests across the codebase and participated in application release processes.",
-                        "Improved legacy code based on product and team requirements.",
+                        "Refactored legacy code in response to product and team requirements.",
                         "Built location and map features using Android Location APIs and Mapbox, and handled complex presentation-layer states with Flux/Redux.",
                         "Implemented AndroidX presentation and framework layers, RxJava domain workflows, and dependency injection with Dagger2."
                     ],
@@ -996,6 +1028,7 @@
                     location: "Tehran, Iran",
                     role: "Senior Android Developer",
                     period: "Jan 2019 - Dec 2019",
+                    logo: "./assets/logo/otaghak.webp",
                     desc: "Developed Android applications for a rental booking product rated 4.0 on Google Play with 500K+ users.",
                     highlights: [
                         "Contributed to separate Host and Guest applications in a cross-functional Scrum team with Android, web, infrastructure, QA, and UI/UX contributors.",
@@ -1010,6 +1043,7 @@
                     location: "Tehran, Iran",
                     role: "Android Developer",
                     period: "Jun 2017 - Sep 2018",
+                    logo: "./assets/logo/dokan.jpg",
                     desc: "Built web and mobile applications for an online grocery shopping platform.",
                     highlights: [
                         "Contributed across five products: customer web app, customer Android app, delivery crew Android app, monitoring web app, and customer iOS app.",
@@ -1023,6 +1057,7 @@
                     location: "Shiraz, Iran",
                     role: "Junior Android Developer",
                     period: "Jun 2016 - Jun 2017",
+                    logo: "./assets/logo/rando.png",
                     desc: "Built driver and passenger Android applications for a ride-hailing platform connecting passengers with drivers.",
                     highlights: [
                         "Managed end-to-end application development, including design, architecture, implementation, QA, and market release.",
@@ -1079,9 +1114,12 @@
                 item.innerHTML = `
                     <article class="experience-card" data-skills='${jobSkillsJson}'>
                         <div class="card-header">
-                            <div>
-                                <h3 class="company-name">${job.company} <span style="font-weight: normal; font-size: 0.95rem; color: var(--text-muted);">— ${job.location}</span></h3>
-                                <div class="job-title">${job.role}</div>
+                            <div class="card-header-left">
+                                ${job.logo ? `<img src="${job.logo}" alt="${job.company} logo" class="company-logo" loading="lazy">` : ''}
+                                <div>
+                                    <h3 class="company-name">${job.company} <span style="font-weight: normal; font-size: 0.95rem; color: var(--text-muted);">— ${job.location}</span></h3>
+                                    <div class="job-title">${job.role}</div>
+                                </div>
                             </div>
                             <span class="job-date">${job.period}</span>
                         </div>
