@@ -601,6 +601,40 @@
             border-top: 1px solid var(--card-border);
         }
 
+        /* Loading Indicator */
+        .loading-overlay {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.25rem;
+            padding: 4rem 2rem;
+            grid-column: 1 / -1;
+        }
+
+        .loading-spinner {
+            width: 36px;
+            height: 36px;
+            border: 3px solid var(--card-border);
+            border-top-color: var(--accent-primary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        .loading-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .app-container.loaded .loading-overlay {
+            display: none;
+        }
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -915,71 +949,26 @@
         </button>
     </div>
 
-    <div class="app-container">
+    <div class="app-container" id="appContainer">
+
+        <!-- Loading Indicator -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Loading resume…</div>
+        </div>
 
         <!-- Left Column: Bio & Skills -->
-        <aside class="sidebar">
-            <header class="profile-header">
-                <h1 class="profile-name">Farzad Tabashir</h1>
-                <div class="profile-title">Senior Android Engineer</div>
-
-                <div class="social-links no-print">
-                    <a href="https://github.com/ftabashir" target="_blank" class="social-icon" aria-label="GitHub">
-                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2"
-                            fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                            </path>
-                        </svg>
-                    </a>
-                    <a href="https://stackoverflow.com/users/2700239/fartab" target="_blank" class="social-icon"
-                        aria-label="StackOverflow">
-                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                            <path
-                                d="M18.986 21.865v-6.435h2.24v8.675H2.774v-8.675h2.24v6.435h13.972zm-12.87-3.412h11.758v-2.24H6.116v2.24zm.446-5.07l11.406 2.76 2.227-2.18-11.405-2.76-2.228 2.18zm1.96-4.664l10.024 6.09 1.185-1.954-10.024-6.09-1.185 1.954zm3.623-4.048l7.636 8.784 1.702-1.48-7.636-8.784-1.702 1.48zm5.728-3.064l-4.71 10.632 2.053.91 4.71-10.632-2.053-.91z" />
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/farzad-tabashir" target="_blank" class="social-icon"
-                        aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2"
-                            fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
-                            </path>
-                            <rect x="2" y="9" width="4" height="12"></rect>
-                            <circle cx="4" cy="4" r="2"></circle>
-                        </svg>
-                    </a>
-                </div>
+        <aside class="sidebar" id="sidebar" style="display: none;">
+            <header class="profile-header" id="profileHeader">
+                <!-- Rendered dynamically -->
             </header>
 
-            <div class="contact-info">
-                <div class="contact-item">
-                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                        <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
-                    <span>Berlin, Germany</span>
-                </div>
-                <div class="contact-item">
-                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    <a href="mailto:ftabashir@gmail.com">ftabashir@gmail.com</a>
-                </div>
+            <div class="contact-info" id="contactInfo">
+                <!-- Rendered dynamically -->
             </div>
 
-            <section>
-                <h2 class="sidebar-section-title">Profile</h2>
-                <p class="profile-summary">
-                    Senior Android Engineer with <span id="years-of-experience">11</span>+ years of experience building
-                    consumer Android applications across food delivery, maps, mobility, travel, grocery, and AR. Strong
-                    in Kotlin, Jetpack Compose, Clean Architecture, performance optimization, maps/location experiences,
-                    GraphQL migrations, and quality automation. Proven record reducing app latency and API costs,
-                    strengthening modular codebases, and mentoring engineers on products used by millions of users.
-                </p>
+            <section id="profileSection">
+                <!-- Rendered dynamically -->
             </section>
 
             <section>
@@ -988,31 +977,25 @@
                     Click a skill to highlight relevant experience:
                 </p>
                 <div class="skills-grid" id="skillsGrid">
-                    <!-- Skills will be rendered dynamically with click-filtering support -->
+                    <!-- Rendered dynamically -->
                 </div>
             </section>
         </aside>
 
         <!-- Right Column: Timeline & Education -->
-        <main class="main-content" id="mainContent">
+        <main class="main-content" id="mainContent" style="display: none;">
 
             <section>
                 <h2 class="section-title">Experience</h2>
                 <div class="timeline" id="experienceTimeline">
-                    <!-- Experience entries rendered here -->
+                    <!-- Rendered dynamically -->
                 </div>
             </section>
 
             <section>
                 <h2 class="section-title">Education</h2>
-                <div class="education-card">
-                    <div class="education-header">
-                        <div>
-                            <h3 class="school-name">Shiraz University</h3>
-                            <div class="degree-title">B.S. Computer Science & Engineering</div>
-                        </div>
-                        <span class="school-date">Oct 2010 - Sep 2015</span>
-                    </div>
+                <div id="educationContainer">
+                    <!-- Rendered dynamically -->
                 </div>
             </section>
 
@@ -1025,126 +1008,96 @@
     </footer>
 
     <script>
-        // Resume Data
-        const resumeData = {
-            skills: [
-                "Android", "Kotlin", "Java", "Android SDK", "Jetpack Compose",
-                "AndroidX", "Coroutines", "RxJava", "DataBinding", "LiveData",
-                "ViewModel", "Clean Architecture", "MVVM/MVP/MVI", "Flux/Redux",
-                "Modularization", "OOP Design Patterns", "Unit Testing", "Integration Testing",
-                "Snapshot Testing", "Performance Optimization", "Crash Analysis", "Code Review",
-                "Technical Mentoring", "Git", "Dagger2", "GraphQL", "CI/CD", "Sentry", "Mapbox",
-                "Android Location APIs", "Maps", "Navigation"
-            ],
-            experience: [
-                {
-                    company: "Delivery Hero SE",
-                    location: "Berlin, Germany",
-                    role: "Senior Android Engineer",
-                    period: "Dec 2022 - Present",
-                    logo: "./assets/logo/deliveryhero.webp",
-                    desc: "Builds Android experiences across location, vendor information, restaurant discovery, and quick-commerce surfaces for Delivery Hero brands serving 100M+ Google Play users across 21 countries.",
-                    highlights: [
-                        "Reduced home-screen loading delay by 2 seconds by refactoring location/snapping flows and deferring address UI until after home load.",
-                        "Reduced geolocator details API costs by 70% by eliminating unnecessary calls and introduced debouncing for search requests.",
-                        "Created a location SDK module, refactored address models, and modularized location dependencies to improve maintainability, testability, build performance, and code quality.",
-                        "Strengthened Android quality automation by contributing to Location Tribe unit-test coverage growth from ~20% to ~50% and improving automation ratio by 12% as the responsible owner.",
-                        "Led Compose support for an internal map SDK, co-authored the RFC, and migrated VendorInfo as the first consumer while monitoring a 50% rollout with no detected Sentry issues.",
-                        "Advanced GraphQL migration and tooling by implementing experiment tracking, integration tests, Time to Interact measurement, GraphQL mappings, and CI workflows for automatic query-manifest publishing.",
-                        "Resolved a critical Android release crash affecting 34,000 users and authored an incident report covering root cause, resolution, and prevention recommendations.",
-                        "Mentors Android engineers through pair programming, code reviews, onboarding support, and technical guidance; evaluates candidates as part of the technical interview committee."
-                    ],
-                    skills: ["Android", "Kotlin", "Jetpack Compose", "Clean Architecture", "Modularization", "Unit Testing", "Integration Testing", "Snapshot Testing", "Performance Optimization", "Crash Analysis", "Technical Mentoring", "GraphQL", "CI/CD", "Sentry"]
-                },
-                {
-                    company: "Balad Maps",
-                    location: "Tehran, Iran",
-                    role: "Senior Android Engineer",
-                    period: "Jan 2020 - Dec 2022",
-                    logo: "./assets/logo/balad.png",
-                    desc: "Built and maintained a high-quality maps and navigation application rated 4.6 on Google Play with 5M+ users and 4.5 on Cafe Bazaar with 20M+ users.",
-                    highlights: [
-                        "Worked as a Senior Android Engineer in a 100+ developer organization.",
-                        "Improved application stability by resolving performance issues and crashes, helping reach a 99.95% crash-free rate.",
-                        "Served on the technical recruitment committee to evaluate engineering candidates.",
-                        "Mentored junior developers and supported their onboarding process.",
-                        "Reviewed merge requests across the codebase and participated in application release processes.",
-                        "Refactored legacy code in response to product and team requirements.",
-                        "Built location and map features using Android Location APIs and Mapbox, and handled complex presentation-layer states with Flux/Redux.",
-                        "Implemented AndroidX presentation and framework layers, RxJava domain workflows, and dependency injection with Dagger2."
-                    ],
-                    skills: ["Android", "Kotlin", "Git", "AndroidX", "Mapbox", "Android Location APIs", "MVVM/MVP/MVI", "Flux/Redux", "RxJava", "Dagger2", "Performance Optimization", "Crash Analysis", "Code Review", "Technical Mentoring"]
-                },
-                {
-                    company: "Otaghak",
-                    location: "Tehran, Iran",
-                    role: "Senior Android Developer",
-                    period: "Jan 2019 - Dec 2019",
-                    logo: "./assets/logo/otaghak.webp",
-                    desc: "Developed Android applications for a rental booking product rated 4.0 on Google Play with 500K+ users.",
-                    highlights: [
-                        "Contributed to separate Host and Guest applications in a cross-functional Scrum team with Android, web, infrastructure, QA, and UI/UX contributors.",
-                        "Architected Android codebases using Clean Architecture, DataBinding, LiveData, and ViewModel.",
-                        "Used Kotlin Coroutines in the Host app, RxJava in the Guest app, and dependency injection with Dagger2.",
-                        "Diagnosed and resolved memory leaks to improve application stability."
-                    ],
-                    skills: ["Android", "Kotlin", "Coroutines", "Clean Architecture", "MVVM/MVP/MVI", "RxJava", "DataBinding", "LiveData", "ViewModel", "Dagger2", "Crash Analysis"]
-                },
-                {
-                    company: "Dokan (IR-FMCG)",
-                    location: "Tehran, Iran",
-                    role: "Android Developer",
-                    period: "Jun 2017 - Sep 2018",
-                    logo: "./assets/logo/dokan.jpg",
-                    desc: "Built web and mobile applications for an online grocery shopping platform.",
-                    highlights: [
-                        "Contributed across five products: customer web app, customer Android app, delivery crew Android app, monitoring web app, and customer iOS app.",
-                        "Participated in the full Software Development Life Cycle (SDLC) in a 9-person Agile/Scrum team.",
-                        "Improved two legacy codebases through periodic maintenance and refactoring."
-                    ],
-                    skills: ["Android", "Java", "Git"]
-                },
-                {
-                    company: "Rando",
-                    location: "Shiraz, Iran",
-                    role: "Junior Android Developer",
-                    period: "Jun 2016 - Jun 2017",
-                    logo: "./assets/logo/rando.png",
-                    desc: "Built driver and passenger Android applications for a ride-hailing platform connecting passengers with drivers.",
-                    highlights: [
-                        "Managed end-to-end application development, including design, architecture, implementation, QA, and market release.",
-                        "Collaborated in a 9-person Scrum/Agile team and shared Android implementation insights with the iOS team."
-                    ],
-                    skills: ["Android", "Java"]
-                },
-                {
-                    company: "Raman LTG",
-                    location: "Shiraz, Iran",
-                    role: "Junior Android Developer",
-                    period: "Mar 2015 - Sep 2015",
-                    desc: "Developed Augmented Reality (AR) applications for Android devices.",
-                    highlights: [
-                        "Worked as the Android developer in a small team with a CEO and three designers.",
-                        "Built features using image recognition, target tracking, 3D rendering, device sensors, Qualcomm Vuforia SDK, Metaio SDK, and PanoramaGL."
-                    ],
-                    skills: ["Android", "Java"]
-                }
-            ]
+        // SVG icon templates for social links
+        const SOCIAL_ICONS = {
+            GitHub: `<svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>`,
+            StackOverflow: `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.986 21.865v-6.435h2.24v8.675H2.774v-8.675h2.24v6.435h13.972zm-12.87-3.412h11.758v-2.24H6.116v2.24zm.446-5.07l11.406 2.76 2.227-2.18-11.405-2.76-2.228 2.18zm1.96-4.664l10.024 6.09 1.185-1.954-10.024-6.09-1.185 1.954zm3.623-4.048l7.636 8.784 1.702-1.48-7.636-8.784-1.702 1.48zm5.728-3.064l-4.71 10.632 2.053.91 4.71-10.632-2.053-.91z"/></svg>`,
+            LinkedIn: `<svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>`
         };
 
         // DOM elements
+        const appContainer = document.getElementById('appContainer');
+        const sidebar = document.getElementById('sidebar');
+        const profileHeader = document.getElementById('profileHeader');
+        const contactInfo = document.getElementById('contactInfo');
+        const profileSection = document.getElementById('profileSection');
         const skillsGrid = document.getElementById('skillsGrid');
         const timeline = document.getElementById('experienceTimeline');
+        const educationContainer = document.getElementById('educationContainer');
         const mainContent = document.getElementById('mainContent');
         const themeToggle = document.getElementById('themeToggle');
 
         // Dynamic State
         let activeSkillFilter = null;
+        let resumeData = null;
+
+        // Calculate years of experience
+        function calculateYears(startYear, startMonth) {
+            const now = new Date();
+            let years = now.getFullYear() - startYear;
+            // startMonth is 1-indexed (3 = March), getMonth() is 0-indexed
+            if (now.getMonth() + 1 < startMonth) {
+                years--;
+            }
+            return years;
+        }
+
+        // Flatten categorized skills into a single array
+        function flattenSkills(skillsObj) {
+            const all = [];
+            for (const skills of Object.values(skillsObj)) {
+                all.push(...skills);
+            }
+            return all;
+        }
+
+        // Render Profile Header (name, title, social links)
+        function renderProfileHeader(meta) {
+            const socialHtml = meta.social.map(s => {
+                const icon = SOCIAL_ICONS[s.platform] || '';
+                return `<a href="${s.url}" target="_blank" class="social-icon" aria-label="${s.platform}">${icon}</a>`;
+            }).join('');
+
+            profileHeader.innerHTML = `
+                <h1 class="profile-name">${meta.name}</h1>
+                <div class="profile-title">${meta.title}</div>
+                <div class="social-links no-print">${socialHtml}</div>
+            `;
+        }
+
+        // Render Contact Info
+        function renderContactInfo(meta) {
+            contactInfo.innerHTML = `
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>${meta.location}</span>
+                </div>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <a href="mailto:${meta.email}">${meta.email}</a>
+                </div>
+            `;
+        }
+
+        // Render Profile Summary
+        function renderProfile(profileTemplate, years) {
+            const profileText = profileTemplate.replace('{years}', String(years));
+            profileSection.innerHTML = `
+                <h2 class="sidebar-section-title">Profile</h2>
+                <p class="profile-summary">${profileText}</p>
+            `;
+        }
 
         // Render Skills
-        function renderSkills() {
+        function renderSkills(allSkills) {
             skillsGrid.innerHTML = '';
-            resumeData.skills.forEach(skill => {
+            allSkills.forEach(skill => {
                 const badge = document.createElement('div');
                 badge.className = 'skill-tag';
                 badge.textContent = skill;
@@ -1154,13 +1107,12 @@
         }
 
         // Render Timeline
-        function renderTimeline() {
+        function renderTimeline(experience) {
             timeline.innerHTML = '';
-            resumeData.experience.forEach((job, index) => {
+            experience.forEach(job => {
                 const item = document.createElement('div');
                 item.className = 'timeline-item';
 
-                // Map skills to lower/normalized version for comparison
                 const jobSkillsJson = JSON.stringify(job.skills);
 
                 item.innerHTML = `
@@ -1175,7 +1127,7 @@
                             </div>
                             <span class="job-date">${job.period}</span>
                         </div>
-                        <p class="job-description">${job.desc}</p>
+                        <p class="job-description">${job.description}</p>
                         <ul class="job-details-list">
                             ${job.highlights.map(pt => `<li>${pt}</li>`).join('')}
                         </ul>
@@ -1188,11 +1140,25 @@
             });
         }
 
+        // Render Education
+        function renderEducation(education) {
+            educationContainer.innerHTML = education.map(edu => `
+                <div class="education-card">
+                    <div class="education-header">
+                        <div>
+                            <h3 class="school-name">${edu.school}</h3>
+                            <div class="degree-title">${edu.degree}</div>
+                        </div>
+                        <span class="school-date">${edu.period}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
         // Toggle Skill Filter
         function toggleSkillFilter(skill, badgeElement) {
             const isRemoving = activeSkillFilter === skill;
 
-            // Remove active status from all badges
             document.querySelectorAll('.skill-tag').forEach(b => b.classList.remove('active'));
 
             if (isRemoving) {
@@ -1204,7 +1170,6 @@
                 badgeElement.classList.add('active');
                 mainContent.classList.add('has-highlight');
 
-                // Highlight jobs matching the skill
                 document.querySelectorAll('.experience-card').forEach(card => {
                     const skills = JSON.parse(card.getAttribute('data-skills') || '[]');
                     if (skills.includes(skill)) {
@@ -1234,28 +1199,40 @@
             }
         }
 
-        // Calculate and update years of experience dynamically
-        function updateYearsOfExperience() {
-            const startYear = 2015;
-            const startMonth = 2; // March (0-indexed)
-            const currentDate = new Date();
-            const currentYear = currentDate.getFullYear();
-            const currentMonth = currentDate.getMonth();
-            let years = currentYear - startYear;
-            if (currentMonth < startMonth) {
-                years--;
+        // Load resume data and render all sections
+        async function boot() {
+            initTheme();
+
+            try {
+                const response = await fetch('./resume.json');
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                resumeData = await response.json();
+            } catch (err) {
+                document.getElementById('loadingOverlay').innerHTML = `
+                    <div class="loading-text" style="color: var(--accent-primary);">Failed to load resume data. Please refresh the page.</div>
+                `;
+                console.error('Failed to load resume.json:', err);
+                return;
             }
-            const el = document.getElementById('years-of-experience');
-            if (el) {
-                el.textContent = years;
-            }
+
+            const years = calculateYears(resumeData.experienceStartYear, resumeData.experienceStartMonth);
+            const allSkills = flattenSkills(resumeData.skills);
+
+            // Render all sections
+            renderProfileHeader(resumeData.meta);
+            renderContactInfo(resumeData.meta);
+            renderProfile(resumeData.profile, years);
+            renderSkills(allSkills);
+            renderTimeline(resumeData.experience);
+            renderEducation(resumeData.education);
+
+            // Show content, hide loader
+            sidebar.style.display = '';
+            mainContent.style.display = '';
+            appContainer.classList.add('loaded');
         }
 
-        // Boot
-        initTheme();
-        updateYearsOfExperience();
-        renderSkills();
-        renderTimeline();
+        boot();
     </script>
 </body>
 

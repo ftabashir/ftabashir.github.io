@@ -1,0 +1,10 @@
+#!/bin/sh
+# Pre-commit hook: regenerate resume.md from resume.json if resume.json changed
+
+# Check if resume.json is staged
+if git diff --cached --name-only | grep -q '^resume\.json$'; then
+  echo "📝 resume.json changed — regenerating resume.md..."
+  node scripts/generate-resume-md.js
+  git add resume.md
+  echo "✅ resume.md updated and staged."
+fi

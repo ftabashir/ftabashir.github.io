@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "name": "Farzad Tabashir",
+    "title": "Senior Android Engineer",
+    "location": "Berlin, Germany",
+    "email": "ftabashir@gmail.com",
+    "subtitle": "Kotlin, Jetpack Compose, Mobile Architecture",
+    "social": [
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/ftabashir",
+        "icon": "assets/icons/github.svg"
+      },
+      {
+        "platform": "StackOverflow",
+        "url": "https://stackoverflow.com/users/2700239/fartab",
+        "icon": "assets/icons/stackoverflow.svg"
+      },
+      {
+        "platform": "LinkedIn",
+        "url": "https://www.linkedin.com/in/farzad-tabashir",
+        "icon": "assets/icons/linkedin.svg"
+      }
+    ]
+  },
+  "profile": "Senior Android Engineer with {years}+ years of experience building consumer Android applications across food delivery, maps, mobility, travel, grocery, and AR. Strong in Kotlin, Jetpack Compose, Clean Architecture, performance optimization, maps/location experiences, GraphQL migrations, and quality automation. Proven record reducing app latency and API costs, strengthening modular codebases, and mentoring engineers on products used by millions of users.",
+  "experienceStartYear": 2015,
+  "experienceStartMonth": 3,
+  "skills": {
+    "Languages": [
+      "Kotlin",
+      "Java"
+    ],
+    "Android": [
+      "Android SDK",
+      "Jetpack Compose",
+      "AndroidX",
+      "Coroutines",
+      "RxJava",
+      "DataBinding",
+      "LiveData",
+      "ViewModel"
+    ],
+    "Architecture": [
+      "Clean Architecture",
+      "MVVM/MVP/MVI",
+      "Flux/Redux",
+      "Modularization",
+      "OOP Design Patterns"
+    ],
+    "Quality & Collaboration": [
+      "Unit Testing",
+      "Integration Testing",
+      "Snapshot Testing",
+      "Performance Optimization",
+      "Crash Analysis",
+      "Code Review",
+      "Technical Mentoring"
+    ],
+    "Tools & Domain": [
+      "Git",
+      "Dagger2",
+      "GraphQL",
+      "CI/CD",
+      "Sentry",
+      "Mapbox",
+      "Android Location APIs",
+      "Maps",
+      "Navigation"
+    ]
+  },
+  "experience": [
+    {
+      "company": "Delivery Hero SE",
+      "location": "Berlin, Germany",
+      "role": "Senior Android Engineer",
+      "period": "Dec 2022 - Present",
+      "logo": "./assets/logo/deliveryhero.webp",
+      "description": "Build Android experiences across location, vendor information, restaurant discovery, and quick-commerce surfaces for Delivery Hero brands serving 100M+ Google Play users across 21 countries.",
+      "highlights": [
+        "Reduced home-screen loading delay by 2 seconds by refactoring location/snapping flows and deferring address UI until after home load.",
+        "Reduced geolocator `/details` API costs by 70% by eliminating unnecessary calls and introduced debouncing for `/search` requests.",
+        "Created a `location-sdk` module, refactored address models, and modularized location dependencies to improve maintainability, testability, build performance, and code quality.",
+        "Strengthened Android quality automation by contributing to Location Tribe unit-test coverage growth from ~20% to ~50% and improving automation ratio by 12% as the responsible owner.",
+        "Led Compose support for an internal map SDK, co-authored the RFC, and migrated VendorInfo as the first consumer while monitoring a 50% rollout with no detected Sentry issues.",
+        "Advanced GraphQL migration and tooling by implementing experiment tracking, integration tests, Time to Interact measurement, GraphQL mappings, and CI workflows for automatic query-manifest publishing.",
+        "Resolved a critical Android release crash affecting 34,000 users and authored an incident report covering root cause, resolution, and prevention recommendations.",
+        "Mentor Android engineers through pair programming, code reviews, onboarding support, and technical guidance; evaluate candidates as part of the technical interview committee."
+      ],
+      "skills": [
+        "Android",
+        "Kotlin",
+        "Jetpack Compose",
+        "Clean Architecture",
+        "Modularization",
+        "Unit Testing",
+        "Integration Testing",
+        "Snapshot Testing",
+        "Performance Optimization",
+        "Crash Analysis",
+        "Technical Mentoring",
+        "GraphQL",
+        "CI/CD",
+        "Sentry"
+      ]
+    },
+    {
+      "company": "Balad Maps",
+      "location": "Tehran, Iran",
+      "role": "Senior Android Engineer",
+      "period": "Jan 2020 - Dec 2022",
+      "logo": "./assets/logo/balad.png",
+      "description": "Built and maintained a high-quality maps and navigation application rated 4.6 on Google Play with 5M+ users and 4.5 on Cafe Bazaar with 20M+ users.",
+      "highlights": [
+        "Worked as a Senior Android Engineer in a 100+ developer organization.",
+        "Improved application stability by resolving performance issues and crashes, helping reach a 99.95% crash-free rate.",
+        "Served on the technical recruitment committee to evaluate engineering candidates.",
+        "Mentored junior developers and supported their onboarding process.",
+        "Reviewed merge requests across the codebase and participated in application release processes.",
+        "Refactored legacy code in response to product and team requirements.",
+        "Built location and map features using Android Location APIs and Mapbox, and handled complex presentation-layer states with Flux/Redux.",
+        "Implemented AndroidX presentation and framework layers, RxJava domain workflows, and dependency injection with Dagger2."
+      ],
+      "skills": [
+        "Android",
+        "Kotlin",
+        "Git",
+        "AndroidX",
+        "Mapbox",
+        "Android Location APIs",
+        "MVVM/MVP/MVI",
+        "Flux/Redux",
+        "RxJava",
+        "Dagger2",
+        "Performance Optimization",
+        "Crash Analysis",
+        "Code Review",
+        "Technical Mentoring"
+      ]
+    },
+    {
+      "company": "Otaghak",
+      "location": "Tehran, Iran",
+      "role": "Senior Android Developer",
+      "period": "Jan 2019 - Dec 2019",
+      "logo": "./assets/logo/otaghak.webp",
+      "description": "Developed Android applications for a rental booking product rated 4.0 on Google Play with 500K+ users.",
+      "highlights": [
+        "Contributed to separate Host and Guest applications in a cross-functional Scrum team with Android, web, infrastructure, QA, and UI/UX contributors.",
+        "Architected Android codebases using Clean Architecture, DataBinding, LiveData, and ViewModel.",
+        "Used Kotlin Coroutines in the Host app, RxJava in the Guest app, and dependency injection with Dagger2.",
+        "Diagnosed and resolved memory leaks to improve application stability."
+      ],
+      "skills": [
+        "Android",
+        "Kotlin",
+        "Coroutines",
+        "Clean Architecture",
+        "MVVM/MVP/MVI",
+        "RxJava",
+        "DataBinding",
+        "LiveData",
+        "ViewModel",
+        "Dagger2",
+        "Crash Analysis"
+      ]
+    },
+    {
+      "company": "Dokan (IR-FMCG)",
+      "location": "Tehran, Iran",
+      "role": "Android Developer",
+      "period": "Jun 2017 - Sep 2018",
+      "logo": "./assets/logo/dokan.jpg",
+      "description": "Built web and mobile applications for an online grocery shopping platform.",
+      "highlights": [
+        "Contributed across five products: customer web app, customer Android app, delivery crew Android app, monitoring web app, and customer iOS app.",
+        "Participated in the full Software Development Life Cycle (SDLC) in a 9-person Agile/Scrum team.",
+        "Improved two legacy codebases through periodic maintenance and refactoring."
+      ],
+      "skills": [
+        "Android",
+        "Java",
+        "Git"
+      ]
+    },
+    {
+      "company": "Rando",
+      "location": "Shiraz, Iran",
+      "role": "Junior Android Developer",
+      "period": "Jun 2016 - Jun 2017",
+      "logo": "./assets/logo/rando.png",
+      "description": "Built driver and passenger Android applications for a ride-hailing platform connecting passengers with drivers.",
+      "highlights": [
+        "Managed end-to-end Android development, including design, architecture, implementation, QA, and market release.",
+        "Collaborated in a 9-person Scrum/Agile team and shared Android implementation insights with the iOS team."
+      ],
+      "skills": [
+        "Android",
+        "Java"
+      ]
+    },
+    {
+      "company": "Raman LTG",
+      "location": "Shiraz, Iran",
+      "role": "Junior Android Developer",
+      "period": "Mar 2015 - Sep 2015",
+      "description": "Developed Augmented Reality (AR) applications for Android devices.",
+      "highlights": [
+        "Worked as the Android developer in a small team with a CEO and three designers.",
+        "Built features using image recognition, target tracking, 3D rendering, device sensors, Qualcomm Vuforia SDK, Metaio SDK, and PanoramaGL."
+      ],
+      "skills": [
+        "Android",
+        "Java"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "Shiraz University, Iran",
+      "degree": "B.S. Computer Science & Engineering",
+      "period": "Oct 2010 - Sep 2015"
+    }
+  ]
+}
