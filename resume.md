@@ -7,7 +7,7 @@ Berlin, Germany | [ftabashir@gmail.com](mailto:ftabashir@gmail.com)
 
 ## Profile
 
-Developing Android apps with 8 years of experience in design, development, testing, deployment, and maintenance of Android applications. Equipped with a diverse set of skills. Experienced with the latest cutting-edge development tools and procedures. Proficient in collaborating with managers to plan and execute projects, ensuring timely completion of goals. Capable of autonomously managing tasks while providing guidance to junior engineers for successful project delivery.
+Developing Android apps with 11 years of experience in design, development, testing, deployment, and maintenance of Android applications. Equipped with a diverse set of skills. Experienced with the latest cutting-edge development tools and procedures. Proficient in collaborating with managers to plan and execute projects, ensuring timely completion of goals. Capable of autonomously managing tasks while providing guidance to junior engineers for successful project delivery.
 
 ---
 

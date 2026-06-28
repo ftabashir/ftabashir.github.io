@@ -6,13 +6,13 @@
     <title>Farzad Tabashir — Senior Android Engineer</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Senior Android Engineer with 8 years of experience building high-scale mobile applications, Map/Location systems, and robust Clean Architecture. Based in Berlin, Germany.">
+    <meta name="description" content="Senior Android Engineer with 11 years of experience building high-scale mobile applications, Map/Location systems, and robust Clean Architecture. Based in Berlin, Germany.">
     <meta name="keywords" content="Android, Kotlin, Jetpack Compose, Senior Android Engineer, Berlin, Germany, Delivery Hero, Balad Maps, Mobile Developer">
     <meta name="author" content="Farzad Tabashir">
     
     <!-- Open Graph / Social -->
     <meta property="og:title" content="Farzad Tabashir — Senior Android Engineer">
-    <meta property="og:description" content="Senior Android Engineer with 8 years of experience. Expert in Kotlin, Jetpack Compose, and Map/Location systems.">
+    <meta property="og:description" content="Senior Android Engineer with 11 years of experience. Expert in Kotlin, Jetpack Compose, and Map/Location systems.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ftabashir.github.io">
     
@@ -899,7 +899,7 @@
             <section>
                 <h2 class="sidebar-section-title">Profile</h2>
                 <p class="profile-summary">
-                    Developing Android apps with 8 years of experience in design, development, testing, deployment, and maintenance of Android applications. Equipped with a diverse set of skills. Experienced with the latest cutting-edge development tools and procedures. Proficient in collaborating with managers to plan and execute projects, ensuring timely completion of goals. Capable of autonomously managing tasks while providing guidance to junior engineers for successful project delivery.
+                    Developing Android apps with <span id="years-of-experience">11</span> years of experience in design, development, testing, deployment, and maintenance of Android applications. Equipped with a diverse set of skills. Experienced with the latest cutting-edge development tools and procedures. Proficient in collaborating with managers to plan and execute projects, ensuring timely completion of goals. Capable of autonomously managing tasks while providing guidance to junior engineers for successful project delivery.
                 </p>
             </section>
 
@@ -1153,8 +1153,26 @@
             }
         }
 
+        // Calculate and update years of experience dynamically
+        function updateYearsOfExperience() {
+            const startYear = 2015;
+            const startMonth = 2; // March (0-indexed)
+            const currentDate = new Date();
+            const currentYear = currentDate.getFullYear();
+            const currentMonth = currentDate.getMonth();
+            let years = currentYear - startYear;
+            if (currentMonth < startMonth) {
+                years--;
+            }
+            const el = document.getElementById('years-of-experience');
+            if (el) {
+                el.textContent = years;
+            }
+        }
+
         // Boot
         initTheme();
+        updateYearsOfExperience();
         renderSkills();
         renderTimeline();
     </script>
