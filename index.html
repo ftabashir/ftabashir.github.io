@@ -3,23 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farzad Tabashir</title>
+    <title>Farzad Tabashir — Senior Android Engineer</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Senior Android Engineer with 8 years of experience building high-scale mobile applications, Map/Location systems, and robust Clean Architecture. Based in Berlin, Germany.">
+    <meta name="keywords" content="Android, Kotlin, Jetpack Compose, Senior Android Engineer, Berlin, Germany, Delivery Hero, Balad Maps, Mobile Developer">
+    <meta name="author" content="Farzad Tabashir">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Farzad Tabashir — Senior Android Engineer">
+    <meta property="og:description" content="Senior Android Engineer with 8 years of experience. Expert in Kotlin, Jetpack Compose, and Map/Location systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ftabashir.github.io">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
+        /* Design Tokens & Theme Variables */
         :root {
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-            --accent-primary: #818cf8;
-            --accent-secondary: #c084fc;
+            --bg-color: #0b0f19;
+            --bg-gradient: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #0b0f19 75%, #020617 100%);
+            --card-bg: rgba(15, 23, 42, 0.65);
+            --card-border: rgba(255, 255, 255, 0.05);
+            --card-hover-border: rgba(129, 140, 248, 0.3);
+            
             --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --glow-color: rgba(129, 140, 248, 0.15);
+            --text-secondary: #cbd5e1;
+            --text-muted: #64748b;
+            
+            --accent-primary: #818cf8;
+            --accent-secondary: #a78bfa;
+            --accent-gradient: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+            
+            --badge-bg: rgba(129, 140, 248, 0.1);
+            --badge-text: #a5b4fc;
+            --badge-border: rgba(129, 140, 248, 0.2);
+            --badge-active-bg: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            --badge-active-text: #ffffff;
+            
+            --timeline-line: rgba(255, 255, 255, 0.06);
+            --timeline-dot: #818cf8;
+            --shadow: rgba(0, 0, 0, 0.3);
+            
+            --transition-speed: 0.3s;
         }
 
+        :root.light {
+            --bg-color: #f8fafc;
+            --bg-gradient: radial-gradient(circle at 50% 0%, #e0e7ff 0%, #f8fafc 75%, #e2e8f0 100%);
+            --card-bg: rgba(255, 255, 255, 0.75);
+            --card-border: rgba(0, 0, 0, 0.06);
+            --card-hover-border: rgba(99, 102, 241, 0.4);
+            
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            
+            --accent-primary: #4f46e5;
+            --accent-secondary: #7c3aed;
+            --accent-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            
+            --badge-bg: rgba(79, 70, 229, 0.08);
+            --badge-text: #4338ca;
+            --badge-border: rgba(79, 70, 229, 0.15);
+            --badge-active-bg: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            --badge-active-text: #ffffff;
+            
+            --timeline-line: rgba(0, 0, 0, 0.08);
+            --timeline-dot: #4f46e5;
+            --shadow: rgba(15, 23, 42, 0.05);
+        }
+
+        /* Base Resets & Typography */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -27,102 +85,1078 @@
         }
 
         body {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Inter', sans-serif;
             background: var(--bg-gradient);
-            color: var(--text-primary);
+            background-color: var(--bg-color);
+            color: var(--text-secondary);
+            line-height: 1.6;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
+            padding: 2rem 1rem;
             position: relative;
+            overflow-x: hidden;
+            transition: background var(--transition-speed), color var(--transition-speed);
         }
 
-        /* Decorative background blobs */
-        body::before, body::after {
-            content: '';
+        /* Decorative Background Blobs */
+        .bg-blob {
             position: absolute;
-            width: 400px;
-            height: 400px;
+            width: 500px;
+            height: 500px;
             border-radius: 50%;
-            filter: blur(100px);
-            z-index: 1;
-            opacity: 0.5;
+            filter: blur(140px);
+            z-index: 0;
+            opacity: 0.12;
+            pointer-events: none;
+            transition: opacity var(--transition-speed);
+        }
+        
+        :root.light .bg-blob {
+            opacity: 0.06;
         }
 
-        body::before {
+        .blob-1 {
             background: var(--accent-primary);
             top: -10%;
             left: -10%;
         }
 
-        body::after {
+        .blob-2 {
             background: var(--accent-secondary);
-            bottom: -10%;
-            right: -10%;
+            bottom: 10%;
+            right: -5%;
         }
 
-        .container {
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-primary);
+            font-weight: 700;
+            text-wrap: balance;
+        }
+
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-secondary);
+        }
+
+        /* Layout Container */
+        .app-container {
             position: relative;
-            z-index: 2;
-            text-align: center;
-            padding: 2.5rem;
-            max-width: 480px;
-            width: 90%;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* Float Controls (Theme Toggle & Print) */
+        .controls {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            display: flex;
+            gap: 0.75rem;
+            z-index: 100;
+        }
+
+        .btn-icon {
             background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 12px var(--shadow);
+            transition: transform 0.2s, border-color 0.2s, background-color 0.2s;
+        }
+
+        .btn-icon:hover {
+            transform: scale(1.05);
+            border-color: var(--card-hover-border);
+        }
+
+        .btn-icon svg {
+            transition: fill 0.2s, stroke 0.2s;
+        }
+
+        .icon-sun { display: none; }
+        :root.light .icon-sun { display: block; }
+        :root.light .icon-moon { display: none; }
+
+        /* Left Sidebar Styling */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--card-border);
             border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
-                        0 0 50px var(--glow-color);
-            transform: translateY(0);
-            animation: float 6s ease-in-out infinite;
+            padding: 2.25rem;
+            box-shadow: 0 10px 30px var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+            transition: border-color var(--transition-speed), background-color var(--transition-speed);
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .profile-header {
+            text-align: center;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: -0.025em;
-            margin-bottom: 1rem;
-            background: linear-gradient(to right, var(--text-primary), var(--accent-primary));
+        .profile-name {
+            font-size: 2.2rem;
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+            background: var(--accent-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            letter-spacing: -0.03em;
         }
 
-        p {
+        .profile-title {
             font-size: 1.1rem;
-            line-height: 1.6;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 0.5rem 1.2rem;
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 500;
             color: var(--accent-primary);
-            background: rgba(129, 140, 248, 0.1);
-            border: 1px solid rgba(129, 140, 248, 0.2);
-            border-radius: 100px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            margin-bottom: 1.25rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            border-top: 1px solid var(--card-border);
+            border-bottom: 1px solid var(--card-border);
+            padding: 1.25rem 0;
+            font-size: 0.9rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-item svg {
+            color: var(--accent-primary);
+            flex-shrink: 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: var(--badge-bg);
+            border: 1px solid var(--badge-border);
+            color: var(--text-primary);
+            transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-2px);
+            background: var(--accent-gradient);
+            border-color: transparent;
+            color: #ffffff;
+        }
+
+        .sidebar-section-title {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            border-left: 3px solid var(--accent-primary);
+            padding-left: 0.5rem;
+        }
+
+        .profile-summary {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            text-wrap: pretty;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            font-size: 0.82rem;
+            font-weight: 500;
+            padding: 0.35rem 0.75rem;
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            border: 1px solid var(--badge-border);
+            border-radius: 100px;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.2s, background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-1px);
+            border-color: var(--accent-primary);
+        }
+
+        .skill-tag.active {
+            background: var(--badge-active-bg);
+            color: var(--badge-active-text);
+            border-color: transparent;
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.25);
+        }
+
+        /* Right Content Area Styling */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--card-border);
+        }
+
+        /* Timeline Container */
+        .timeline {
+            position: relative;
+            padding-left: 1.75rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 5px;
+            width: 2px;
+            background: var(--timeline-line);
+        }
+
+        /* Experience Cards */
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.75rem;
+            top: 1.45rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--bg-color);
+            border: 2px solid var(--timeline-dot);
+            z-index: 2;
+            transition: background var(--transition-speed), transform 0.2s;
+        }
+
+        .experience-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 18px;
+            padding: 1.75rem;
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: transform 0.3s, border-color 0.3s, opacity 0.3s, box-shadow 0.3s;
+        }
+
+        .timeline-item:hover::before {
+            transform: scale(1.3);
+            background: var(--timeline-dot);
+        }
+
+        .timeline-item:hover .experience-card {
+            border-color: var(--card-hover-border);
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        /* Highlight Dim Mode */
+        .main-content.has-highlight .experience-card {
+            opacity: 0.35;
+        }
+
+        .main-content.has-highlight .experience-card.highlighted {
+            opacity: 1;
+            transform: scale(1.01);
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 25px rgba(129, 140, 248, 0.15);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .company-name {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .job-title {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--accent-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .job-date {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .job-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+            text-wrap: pretty;
+        }
+
+        .job-details-list {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .job-details-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            text-wrap: pretty;
+        }
+
+        .job-details-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            line-height: 1;
+            top: 0;
+        }
+
+        /* Card Skills Pill Section */
+        .card-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--card-border);
+        }
+
+        .card-skill-tag {
+            font-size: 0.76rem;
+            font-weight: 500;
+            padding: 0.2rem 0.5rem;
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            border-radius: 6px;
+            border: 1px solid var(--badge-border);
+        }
+
+        /* Education Card */
+        .education-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 18px;
+            padding: 1.75rem;
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: border-color 0.3s;
+        }
+
+        .education-card:hover {
+            border-color: var(--card-hover-border);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .school-name {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .degree-title {
+            font-size: 0.95rem;
+            color: var(--accent-primary);
+            font-weight: 500;
+        }
+
+        .school-date {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--card-border);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(129, 140, 248, 0.2);
+            border-radius: 100px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(129, 140, 248, 0.4);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .app-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .sidebar {
+                position: relative;
+                top: 0;
+            }
+
+            .controls {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .sidebar {
+                padding: 1.5rem;
+            }
+
+            .experience-card, .education-card {
+                padding: 1.25rem;
+            }
+
+            .card-header, .education-header {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+
+            .job-date, .school-date {
+                margin-top: 0.1rem;
+            }
+        }
+
+        /* Print Media Queries */
+        @media print {
+            body {
+                background: none !important;
+                background-color: #ffffff !important;
+                color: #111111 !important;
+                font-size: 11pt !important;
+                padding: 0 !important;
+            }
+
+            .bg-blob, .controls, .social-links, footer, .card-skills {
+                display: none !important;
+            }
+
+            .app-container {
+                display: block !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .sidebar {
+                position: static !important;
+                background: none !important;
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 0 1.5rem 0 !important;
+                border-bottom: 2px solid #eaeaea !important;
+                margin-bottom: 1.5rem !important;
+                border-radius: 0 !important;
+                display: block !important;
+            }
+
+            .profile-header {
+                text-align: left !important;
+            }
+
+            .profile-name {
+                font-size: 26pt !important;
+                color: #000000 !important;
+                -webkit-text-fill-color: initial !important;
+                margin-bottom: 2pt !important;
+            }
+
+            .profile-title {
+                font-size: 13pt !important;
+                color: #333333 !important;
+                margin-bottom: 10pt !important;
+            }
+
+            .contact-info {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 6pt !important;
+                border: none !important;
+                padding: 5pt 0 !important;
+                font-size: 9.5pt !important;
+            }
+
+            .contact-item {
+                color: #222222 !important;
+            }
+
+            .contact-item svg {
+                color: #333333 !important;
+            }
+
+            .profile-summary {
+                font-size: 10.5pt !important;
+                color: #222222 !important;
+                margin-top: 10pt !important;
+            }
+
+            /* Hide skills list block in sidebar to avoid clutter, 
+               or print them as normal text list. */
+            .sidebar-section-title {
+                border-left: 2px solid #333333 !important;
+                color: #000000 !important;
+                font-size: 11pt !important;
+                margin-top: 12pt !important;
+                margin-bottom: 6pt !important;
+            }
+
+            .skills-grid {
+                display: block !important;
+            }
+
+            .skill-tag {
+                display: inline-block !important;
+                background: none !important;
+                border: none !important;
+                color: #000000 !important;
+                font-weight: 500 !important;
+                padding: 0 8pt 0 0 !important;
+                font-size: 10pt !important;
+            }
+
+            .skill-tag::after {
+                content: ", ";
+            }
+
+            .skill-tag:last-child::after {
+                content: "";
+            }
+
+            /* Main Content Print Settings */
+            .main-content {
+                display: block !important;
+                gap: 0 !important;
+                opacity: 1 !important;
+            }
+
+            .section-title {
+                font-size: 14pt !important;
+                color: #000000 !important;
+                margin-top: 15pt !important;
+                margin-bottom: 10pt !important;
+                border-bottom: 1.5px solid #eaeaea !important;
+                padding-bottom: 4pt !important;
+            }
+
+            .section-title::after {
+                display: none !important;
+            }
+
+            .timeline {
+                padding-left: 0 !important;
+            }
+
+            .timeline::before {
+                display: none !important;
+            }
+
+            .timeline-item {
+                margin-bottom: 14pt !important;
+                page-break-inside: avoid;
+            }
+
+            .timeline-item::before {
+                display: none !important;
+            }
+
+            .experience-card, .education-card {
+                background: none !important;
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            .card-header, .education-header {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: baseline !important;
+                border-bottom: 0.5px solid #f0f0f0 !important;
+                padding-bottom: 2pt !important;
+                margin-bottom: 4pt !important;
+            }
+
+            .company-name, .school-name {
+                font-size: 12pt !important;
+                color: #000000 !important;
+            }
+
+            .job-title, .degree-title {
+                font-size: 10.5pt !important;
+                color: #333333 !important;
+                font-weight: 600 !important;
+            }
+
+            .job-date, .school-date {
+                font-size: 9.5pt !important;
+                color: #555555 !important;
+            }
+
+            .job-description {
+                font-size: 10pt !important;
+                color: #222222 !important;
+                margin-bottom: 5pt !important;
+            }
+
+            .job-details-list {
+                gap: 3pt !important;
+            }
+
+            .job-details-list li {
+                font-size: 9.5pt !important;
+                color: #333333 !important;
+                padding-left: 10pt !important;
+            }
+
+            .job-details-list li::before {
+                color: #333333 !important;
+            }
         }
     </style>
 </head>
 <body>
 
-    <main class="container">
-        <span class="tag">Hello, World!</span>
-        <h1 style="margin-top: 1.5rem;">Under Construction</h1>
-        <p>This page is currently being redesigned to showcase my professional resume. Stay tuned!</p>
-    </main>
+    <!-- Decorative blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
 
+    <!-- Theme and Print Controls -->
+    <div class="controls no-print">
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle dark/light mode">
+            <!-- Moon icon -->
+            <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <!-- Sun icon -->
+            <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+        </button>
+        <button onclick="window.print()" class="btn-icon" aria-label="Print or Save PDF">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+        </button>
+    </div>
+
+    <div class="app-container">
+        
+        <!-- Left Column: Bio & Skills -->
+        <aside class="sidebar">
+            <header class="profile-header">
+                <h1 class="profile-name">Farzad Tabashir</h1>
+                <div class="profile-title">Senior Android Engineer</div>
+                
+                <div class="social-links no-print">
+                    <a href="https://github.com/ftabashir" target="_blank" class="social-icon" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                    <a href="https://stackoverflow.com/users/2700239/fartab" target="_blank" class="social-icon" aria-label="StackOverflow">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                            <path d="M18.986 21.865v-6.435h2.24v8.675H2.774v-8.675h2.24v6.435h13.972zm-12.87-3.412h11.758v-2.24H6.116v2.24zm.446-5.07l11.406 2.76 2.227-2.18-11.405-2.76-2.228 2.18zm1.96-4.664l10.024 6.09 1.185-1.954-10.024-6.09-1.185 1.954zm3.623-4.048l7.636 8.784 1.702-1.48-7.636-8.784-1.702 1.48zm5.728-3.064l-4.71 10.632 2.053.91 4.71-10.632-2.053-.91z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/farzad-tabashir" target="_blank" class="social-icon" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </header>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Berlin, Germany</span>
+                </div>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <a href="mailto:ftabashir@gmail.com">ftabashir@gmail.com</a>
+                </div>
+            </div>
+
+            <section>
+                <h2 class="sidebar-section-title">Profile</h2>
+                <p class="profile-summary">
+                    Developing Android apps with 8 years of experience in design, development, testing, deployment, and maintenance of Android applications. Equipped with a diverse set of skills. Experienced with the latest cutting-edge development tools and procedures. Proficient in collaborating with managers to plan and execute projects, ensuring timely completion of goals. Capable of autonomously managing tasks while providing guidance to junior engineers for successful project delivery.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="sidebar-section-title">Skills</h2>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.6rem;" class="no-print">
+                    Click a skill to highlight relevant experience:
+                </p>
+                <div class="skills-grid" id="skillsGrid">
+                    <!-- Skills will be rendered dynamically with click-filtering support -->
+                </div>
+            </section>
+        </aside>
+
+        <!-- Right Column: Timeline & Education -->
+        <main class="main-content" id="mainContent">
+            
+            <section>
+                <h2 class="section-title">Experience</h2>
+                <div class="timeline" id="experienceTimeline">
+                    <!-- Experience entries rendered here -->
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title">Education</h2>
+                <div class="education-card">
+                    <div class="education-header">
+                        <div>
+                            <h3 class="school-name">Shiraz University</h3>
+                            <div class="degree-title">B.S. Computer Science & Engineering</div>
+                        </div>
+                        <span class="school-date">Oct 2010 - Sep 2015</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        
+    </div>
+
+    <footer class="no-print">
+        <p>&copy; 2026 Farzad Tabashir. Crafted with Outfit & Inter.</p>
+    </footer>
+
+    <script>
+        // Resume Data
+        const resumeData = {
+            skills: [
+                "Android", "Kotlin", "Coroutines", "Jetpack Compose", "Java", 
+                "Git", "Clean Architecture", "MVVM/MVP/MVI", "RxJava", 
+                "OOP Design Patterns", "Unit Testing"
+            ],
+            experience: [
+                {
+                    company: "Delivery Hero SE",
+                    location: "Berlin, Germany",
+                    role: "Senior Android Engineer",
+                    period: "Dec 2022 - Present",
+                    desc: "Provide a platform for ordering meals, groceries, and shopping. 3 brands operating in 21 countries with +100M users in Google Play.",
+                    highlights: [
+                        "A member of the Location Tribe, ensuring a seamless user experience by delivering and visualizing accurate customer locations.",
+                        "Mentoring junior engineers, providing technical guidance and support.",
+                        "Participated in a cross-team initiative to improve app startup time.",
+                        "Participated in defining initiatives in refactoring and modularization, improving code maintainability and scalability. Elevated unit test coverage to enhance application resilience, subtly shaping architectural decisions for a more robust and adaptable Android codebase.",
+                        "Migration to Jetpack Compose, particularly focusing on screens related to maps.",
+                        "Assisting other squads in the migration to Jetpack Compose.",
+                        "Contributed as a member of the interview committee, assessing and selecting candidates for technical roles."
+                    ],
+                    skills: ["Android", "Kotlin", "Jetpack Compose", "Clean Architecture", "Unit Testing"]
+                },
+                {
+                    company: "Balad Maps",
+                    location: "Tehran, Iran",
+                    role: "Senior Android Engineer",
+                    period: "Jan 2020 - Dec 2022",
+                    desc: "Delivering high quality map and navigation application with a rating of 4.6 in Google Play (+5M users) and 4.5 in Cafe Bazaar (+20M users).",
+                    highlights: [
+                        "Work as a Senior Android Developer in a large team of +100 developers.",
+                        "Maintaining the app and fixing performance issues and crashes to reach a +99.95% crash free rate.",
+                        "Being a member of the Recruitment Committee as a technical member trying to find talented applicants.",
+                        "Mentoring junior developers and helping them in the on-boarding process.",
+                        "Reviewing merge requests on code base to avoid any out of guideline changes. Participating in the release process of the application.",
+                        "Being a team player and communicating with other team members specially product manager and team leader to deliver top values to the end users.",
+                        "Improving legacy parts of codebase based on product & team requirements.",
+                        "Working with android location APIs and map SDKs like Mapbox.",
+                        "Handling complex presentation layer states using Flux/Redux state management pattern.",
+                        "Use AndroidX libraries in the presentation and framework layers.",
+                        "Utilize RxJava heavily in the Domain layer.",
+                        "DI using Dagger2."
+                    ],
+                    skills: ["Android", "Kotlin", "Git", "MVVM/MVP/MVI", "RxJava", "OOP Design Patterns"]
+                },
+                {
+                    company: "Otaghak",
+                    location: "Tehran, Iran",
+                    role: "Senior Android Developer",
+                    period: "Jan 2019 - Dec 2019",
+                    desc: "Develop high quality software at Otaghak to facilitate finding and booking perfect rental places. Check Otaghak app with a rating of 4.0 and +500K users at Google Play.",
+                    highlights: [
+                        "Used SCRUM-Agile software development methodology.",
+                        "Work as an Android Developer in a team consisting of 2 android developers, 8 web developers and other guys working in infrastructure, QC and UI/UX.",
+                        "Architect project based on Clean Architecture guidelines.",
+                        "Use DataBinding, LiveData, ViewModel libs in presentation layer.",
+                        "Contribute on two codebases (Host and Guest specific apps).",
+                        "Utilize Kotlin Coroutines (in Host App) and RxJava (in Guest App).",
+                        "DI using Dagger2.",
+                        "Fight against memory leaks."
+                    ],
+                    skills: ["Android", "Kotlin", "Coroutines", "Clean Architecture", "MVVM/MVP/MVI", "RxJava"]
+                },
+                {
+                    company: "Dokan (IR-FMCG)",
+                    location: "Tehran, Iran",
+                    role: "Android Developer",
+                    period: "Jun 2017 - Sep 2018",
+                    desc: "Built web and mobile applications to provide an easy and economical online grocery shopping experience for the customers.",
+                    highlights: [
+                        "Participated in complete Software Development Life Cycle (SDLC) in a team of 9 developers/designers using an Agile/Scrum environment.",
+                        "Worked on two legacy codebase and improved them periodically.",
+                        "Participated in 5 projects: customer web app (angular), customer android app, delivery crew android app, monitoring web app (ASP.NET MVC), customer iOS app."
+                    ],
+                    skills: ["Android", "Java", "Git"]
+                },
+                {
+                    company: "Rando",
+                    location: "Shiraz, Iran",
+                    role: "Junior Android Developer",
+                    period: "Jun 2016 - Jun 2017",
+                    desc: "Created a ride hailing platform that makes it easy and secure to transmit passengers. Passengers use the Rando app to request a cab for their trips.",
+                    highlights: [
+                        "A mid-size team of 9 engineers/designers, adopting Scrum/Agile methodologies.",
+                        "Managed end-to-end application development, including design, architecture, implementation, QA, and market release.",
+                        "Shared Android development insights with the iOS team.",
+                        "Contributed to both driver and passenger app development."
+                    ],
+                    skills: ["Android", "Java"]
+                },
+                {
+                    company: "Raman LTG",
+                    location: "Shiraz, Iran",
+                    role: "Junior Android Developer",
+                    period: "Mar 2015 - Sep 2015",
+                    desc: "Developing Augmented Reality (AR) applications for android devices.",
+                    highlights: [
+                        "A small team with one Android developer, a CEO and 3 designers.",
+                        "Image recognition, Target Tracking, 3D Rendering and working with Sensors like GPS, Accelerometer, Gyroscope, and Magnetic Field.",
+                        "Frameworks and Libraries: Qualcomm Vuforia SDK, Metaio SDK, PanoramaGL."
+                    ],
+                    skills: ["Android", "Java"]
+                }
+            ]
+        };
+
+        // DOM elements
+        const skillsGrid = document.getElementById('skillsGrid');
+        const timeline = document.getElementById('experienceTimeline');
+        const mainContent = document.getElementById('mainContent');
+        const themeToggle = document.getElementById('themeToggle');
+
+        // Dynamic State
+        let activeSkillFilter = null;
+
+        // Render Skills
+        function renderSkills() {
+            skillsGrid.innerHTML = '';
+            resumeData.skills.forEach(skill => {
+                const badge = document.createElement('div');
+                badge.className = 'skill-tag';
+                badge.textContent = skill;
+                badge.addEventListener('click', () => toggleSkillFilter(skill, badge));
+                skillsGrid.appendChild(badge);
+            });
+        }
+
+        // Render Timeline
+        function renderTimeline() {
+            timeline.innerHTML = '';
+            resumeData.experience.forEach((job, index) => {
+                const item = document.createElement('div');
+                item.className = 'timeline-item';
+                
+                // Map skills to lower/normalized version for comparison
+                const jobSkillsJson = JSON.stringify(job.skills);
+
+                item.innerHTML = `
+                    <article class="experience-card" data-skills='${jobSkillsJson}'>
+                        <div class="card-header">
+                            <div>
+                                <h3 class="company-name">${job.company} <span style="font-weight: normal; font-size: 0.95rem; color: var(--text-muted);">— ${job.location}</span></h3>
+                                <div class="job-title">${job.role}</div>
+                            </div>
+                            <span class="job-date">${job.period}</span>
+                        </div>
+                        <p class="job-description">${job.desc}</p>
+                        <ul class="job-details-list">
+                            ${job.highlights.map(pt => `<li>${pt}</li>`).join('')}
+                        </ul>
+                        <div class="card-skills">
+                            ${job.skills.map(s => `<span class="card-skill-tag">${s}</span>`).join('')}
+                        </div>
+                    </article>
+                `;
+                timeline.appendChild(item);
+            });
+        }
+
+        // Toggle Skill Filter
+        function toggleSkillFilter(skill, badgeElement) {
+            const isRemoving = activeSkillFilter === skill;
+            
+            // Remove active status from all badges
+            document.querySelectorAll('.skill-tag').forEach(b => b.classList.remove('active'));
+
+            if (isRemoving) {
+                activeSkillFilter = null;
+                mainContent.classList.remove('has-highlight');
+                document.querySelectorAll('.experience-card').forEach(c => c.classList.remove('highlighted'));
+            } else {
+                activeSkillFilter = skill;
+                badgeElement.classList.add('active');
+                mainContent.classList.add('has-highlight');
+                
+                // Highlight jobs matching the skill
+                document.querySelectorAll('.experience-card').forEach(card => {
+                    const skills = JSON.parse(card.getAttribute('data-skills') || '[]');
+                    if (skills.includes(skill)) {
+                        card.classList.add('highlighted');
+                    } else {
+                        card.classList.remove('highlighted');
+                    }
+                });
+            }
+        }
+
+        // Theme Toggle Logic
+        themeToggle.addEventListener('click', () => {
+            const isLight = document.documentElement.classList.toggle('light');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+
+        // Initialize theme on load
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+            
+            if (savedTheme === 'light' || (!savedTheme && systemPrefersLight)) {
+                document.documentElement.classList.add('light');
+            } else {
+                document.documentElement.classList.remove('light');
+            }
+        }
+
+        // Boot
+        initTheme();
+        renderSkills();
+        renderTimeline();
+    </script>
 </body>
 </html>
