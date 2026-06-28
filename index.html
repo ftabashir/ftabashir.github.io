@@ -664,13 +664,17 @@
         }
 
         /* Print Media Queries */
+        @page {
+            margin-top: 0;
+        }
+
         @media print {
             body {
                 background: none !important;
                 background-color: #ffffff !important;
                 color: #111111 !important;
                 font-size: 11pt !important;
-                padding: 0 !important;
+                padding: 10mm !important;
             }
 
             .bg-blob,
