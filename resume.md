@@ -1,5 +1,7 @@
 # Farzad Tabashir
 
+Senior Android Engineer | Kotlin, Jetpack Compose, Maps & Location
+
 Berlin, Germany | [ftabashir@gmail.com](mailto:ftabashir@gmail.com)  
 [![GitHub][image1]](https://github.com/ftabashir) [![StackOverflow][image2]](https://stackoverflow.com/users/2700239/fartab) [![LinkedIn][image3]](https://www.linkedin.com/in/farzad-tabashir)
 
@@ -7,13 +9,17 @@ Berlin, Germany | [ftabashir@gmail.com](mailto:ftabashir@gmail.com)
 
 ## Profile
 
-Developing Android apps with 11 years of experience in design, development, testing, deployment, and maintenance of Android applications. Equipped with a diverse set of skills. Experienced with the latest cutting-edge development tools and procedures. Proficient in collaborating with managers to plan and execute projects, ensuring timely completion of goals. Capable of autonomously managing tasks while providing guidance to junior engineers for successful project delivery.
+Senior Android Engineer with 11+ years of experience building consumer Android applications across food delivery, maps, mobility, travel, grocery, and AR. Strong in Kotlin, Jetpack Compose, Clean Architecture, maps/location experiences, performance optimization, and mentoring. Experienced in improving app quality, supporting modular Android codebases, and collaborating with cross-functional teams on products used by millions of users.
 
 ---
 
 ## Skills
 
-Android, Kotlin, Coroutines, Jetpack Compose, Java, Git, Clean Architecture, MVVM/MVP/MVI, RxJava, OOP Design Patterns, Unit Testing
+**Languages:** Kotlin, Java  
+**Android:** Android SDK, Jetpack Compose, AndroidX, Coroutines, RxJava, DataBinding, LiveData, ViewModel  
+**Architecture:** Clean Architecture, MVVM/MVP/MVI, Flux/Redux, Modularization, OOP Design Patterns  
+**Quality & Collaboration:** Unit Testing, Performance Optimization, Crash Analysis, Code Review, Technical Mentoring  
+**Tools & Domain:** Git, Dagger2, Mapbox, Android Location APIs, Maps, Navigation
 
 ---
 
@@ -22,71 +28,56 @@ Android, Kotlin, Coroutines, Jetpack Compose, Java, Git, Clean Architecture, MVV
 ### Delivery Hero SE — Berlin, Germany
 **Senior Android Engineer** | *Dec 2022 - Present*
 
-* Provide a platform for ordering meals, groceries, and shopping. 3 brands operating in 21 countries with +100M users in Google Play.
-* A member of the Location Tribe, ensuring a seamless user experience by delivering and visualizing accurate customer locations.
-* Mentoring junior engineers, providing technical guidance and support.
-* Participated in a cross-team initiative to improve app startup time.
-* Participated in defining initiatives in refactoring and modularization, improving code maintainability and scalability. Elevated unit test coverage to enhance application resilience, subtly shaping architectural decisions for a more robust and adaptable Android codebase.
-* Migration to Jetpack Compose, particularly focusing on screens related to maps.
-* Assisting other squads in the migration to Jetpack Compose.
-* Contributed as a member of the interview committee, assessing and selecting candidates for technical roles.
+* Build location, address, and map experiences in the Location Tribe for Delivery Hero brands serving 100M+ Google Play users across 21 countries.
+* Mentor junior Android engineers through technical guidance, code reviews, and delivery support.
+* Contribute to a cross-team initiative focused on improving application startup performance.
+* Contribute to refactoring and modularization initiatives that improve code maintainability, scalability, and testability.
+* Migrate map-related screens to Jetpack Compose and support other squads adopting Compose patterns.
+* Evaluate Android engineering candidates as a member of the technical interview committee.
 
 ### Balad Maps — Tehran, Iran
 **Senior Android Engineer** | *Jan 2020 - Dec 2022*
 
-* Delivering high quality map and navigation application with a rating of 4.6 in Google Play (+5M users) and 4.5 in Cafe Bazaar (+20M users).
-* Work as a Senior Android Developer in a large team of +100 developers.
-* Maintaining the app and fixing performance issues and crashes to reach a +99.95% crash free rate.
-* Being a member of the Recruitment Committee as a technical member trying to find talented applicants.
-* Mentoring junior developers and helping them in the on-boarding process.
-* Reviewing merge requests on code base to avoid any out of guideline changes. Participating in the release process of the application.
-* Being a team player and communicating with other team members specially product manager and team leader to deliver top values to the end users.
-* Improving legacy parts of codebase based on product & team requirements.
-* Working with android location APIs and map SDKs like Mapbox.
-* Handling complex presentation layer states using Flux/Redux state management pattern.
-* Use AndroidX libraries in the presentation and framework layers.
-* Utilize RxJava heavily in the Domain layer.
-* DI using Dagger2.
+* Built and maintained a high-quality maps and navigation application rated 4.6 on Google Play with 5M+ users and 4.5 on Cafe Bazaar with 20M+ users.
+* Worked as a Senior Android Engineer in a 100+ developer organization.
+* Improved application stability by resolving performance issues and crashes, helping reach a 99.95% crash-free rate.
+* Served on the technical recruitment committee to evaluate engineering candidates.
+* Mentored junior developers and supported their onboarding process.
+* Reviewed merge requests across the codebase and participated in application release processes.
+* Improved legacy code based on product and team requirements.
+* Built location and map features using Android Location APIs and Mapbox, and handled complex presentation-layer states with Flux/Redux.
+* Implemented AndroidX presentation and framework layers, RxJava domain workflows, and dependency injection with Dagger2.
 
 ### Otaghak — Tehran, Iran
 **Senior Android Developer** | *Jan 2019 - Dec 2019*
 
-* Develop high quality software at Otaghak to facilitate finding and booking perfect rental places. Check Otaghak app with a rating of 4.0 and +500K users at Google Play.
-* Used SCRUM-Agile software development methodology.
-* Work as an Android Developer in a team consisting of 2 android developers, 8 web developers and other guys working in infrastructure, QC and UI/UX.
-* Architect project based on Clean Architecture guidelines.
-* Use DataBinding, LiveData, ViewModel libs in presentation layer.
-* Contribute on two codebases (Host and Guest specific apps).
-* Utilize Kotlin Coroutines (in Host App) and RxJava (in Guest App).
-* DI using Dagger2.
-* Fight against memory leaks.
+* Developed Android applications for a rental booking product rated 4.0 on Google Play with 500K+ users.
+* Contributed to separate Host and Guest applications in a cross-functional Scrum team with Android, web, infrastructure, QA, and UI/UX contributors.
+* Architected Android codebases using Clean Architecture, DataBinding, LiveData, and ViewModel.
+* Used Kotlin Coroutines in the Host app, RxJava in the Guest app, and dependency injection with Dagger2.
+* Diagnosed and resolved memory leaks to improve application stability.
 
 ### Dokan (IR-FMCG) — Tehran, Iran
 **Android Developer** | *Jun 2017 - Sep 2018*
 
-* Built web and mobile applications to provide an easy and economical online grocery shopping experience for the customers.
-* Website: https://dokan.ir - unfortunately it is out of reach now :(.
-* Participated in complete Software Development Life Cycle (SDLC) in a team of 9 developers/designers using an Agile/Scrum environment.
-* Worked on two legacy codebase and improved them periodically.
-* Participated in 5 projects: customer web app (angular), customer android app, delivery crew android app, monitoring web app (ASP.NET MVC), customer iOS app.
+* Built web and mobile applications for an online grocery shopping platform.
+* Contributed across five products: customer web app, customer Android app, delivery crew Android app, monitoring web app, and customer iOS app.
+* Participated in the full Software Development Life Cycle (SDLC) in a 9-person Agile/Scrum team.
+* Improved two legacy codebases through periodic maintenance and refactoring.
 
 ### Rando — Shiraz, Iran
 **Junior Android Developer** | *Jun 2016 - Jun 2017*
 
-* Created a ride hailing platform that makes it easy and secure to transmit passengers. Passengers use the Rando app to request a cab for their trips.
-* Website: https://randoapp.ir - unfortunately it is out of reach now :(.
-* A mid-size team of 9 engineers/designers, adopting Scrum/Agile methodologies.
-* Managed end-to-end application development, including design, architecture, implementation, QA, and market release.
-* Shared Android development insights with the iOS team.
-* Contributed to both driver and passenger app development.
+* Built driver and passenger Android applications for a ride-hailing platform connecting passengers with drivers.
+* Managed end-to-end Android development, including design, architecture, implementation, QA, and market release.
+* Collaborated in a 9-person Scrum/Agile team and shared Android implementation insights with the iOS team.
 
 ### Raman LTG — Shiraz, Iran
 **Junior Android Developer** | *Mar 2015 - Sep 2015*
 
-* Developing Augmented Reality (AR) applications for android devices.
-* A small team with one Android developer, a CEO and 3 designers.
-* Image recognition, Target Tracking, 3D Rendering and working with Sensors like GPS, Accelerometer, Gyroscope, and Magnetic Field.
-* Frameworks and Libraries: Qualcomm Vuforia SDK, Metaio SDK, PanoramaGL.
+* Developed Augmented Reality (AR) applications for Android devices.
+* Worked as the Android developer in a small team with a CEO and three designers.
+* Built features using image recognition, target tracking, 3D rendering, device sensors, Qualcomm Vuforia SDK, Metaio SDK, and PanoramaGL.
 
 ---
 
