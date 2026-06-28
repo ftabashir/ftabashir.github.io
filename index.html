@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farzad Tabashir — Senior Android Engineer</title>
-    
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Senior Android Engineer with 11+ years of experience building high-scale Android applications, mobile architecture, performance, and maps/location systems. Based in Berlin, Germany.">
-    <meta name="keywords" content="Android, Kotlin, Jetpack Compose, Senior Android Engineer, Berlin, Germany, Delivery Hero, Balad Maps, Mobile Architecture, GraphQL">
+    <meta name="description"
+        content="Senior Android Engineer with 11+ years of experience building high-scale Android applications, mobile architecture, performance, and maps/location systems. Based in Berlin, Germany.">
+    <meta name="keywords"
+        content="Android, Kotlin, Jetpack Compose, Senior Android Engineer, Berlin, Germany, Delivery Hero, Balad Maps, Mobile Architecture, GraphQL">
     <meta name="author" content="Farzad Tabashir">
-    
+
     <!-- Open Graph / Social -->
     <meta property="og:title" content="Farzad Tabashir — Senior Android Engineer">
-    <meta property="og:description" content="Senior Android Engineer with 11+ years of experience. Strong in Kotlin, Jetpack Compose, mobile architecture, performance, and maps/location systems.">
+    <meta property="og:description"
+        content="Senior Android Engineer with 11+ years of experience. Strong in Kotlin, Jetpack Compose, mobile architecture, performance, and maps/location systems.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ftabashir.github.io">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <style>
         /* Design Tokens & Theme Variables */
         :root {
@@ -29,25 +35,25 @@
             --card-bg: rgba(15, 23, 42, 0.65);
             --card-border: rgba(255, 255, 255, 0.05);
             --card-hover-border: rgba(129, 140, 248, 0.3);
-            
+
             --text-primary: #f8fafc;
             --text-secondary: #cbd5e1;
             --text-muted: #64748b;
-            
+
             --accent-primary: #818cf8;
             --accent-secondary: #a78bfa;
             --accent-gradient: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
-            
+
             --badge-bg: rgba(129, 140, 248, 0.1);
             --badge-text: #a5b4fc;
             --badge-border: rgba(129, 140, 248, 0.2);
             --badge-active-bg: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
             --badge-active-text: #ffffff;
-            
+
             --timeline-line: rgba(255, 255, 255, 0.06);
             --timeline-dot: #818cf8;
             --shadow: rgba(0, 0, 0, 0.3);
-            
+
             --transition-speed: 0.3s;
         }
 
@@ -57,21 +63,21 @@
             --card-bg: rgba(255, 255, 255, 0.75);
             --card-border: rgba(0, 0, 0, 0.06);
             --card-hover-border: rgba(99, 102, 241, 0.4);
-            
+
             --text-primary: #0f172a;
             --text-secondary: #334155;
             --text-muted: #64748b;
-            
+
             --accent-primary: #4f46e5;
             --accent-secondary: #7c3aed;
             --accent-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-            
+
             --badge-bg: rgba(79, 70, 229, 0.08);
             --badge-text: #4338ca;
             --badge-border: rgba(79, 70, 229, 0.15);
             --badge-active-bg: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
             --badge-active-text: #ffffff;
-            
+
             --timeline-line: rgba(0, 0, 0, 0.08);
             --timeline-dot: #4f46e5;
             --shadow: rgba(15, 23, 42, 0.05);
@@ -109,7 +115,7 @@
             pointer-events: none;
             transition: opacity var(--transition-speed);
         }
-        
+
         :root.light .bg-blob {
             opacity: 0.06;
         }
@@ -126,7 +132,10 @@
             right: -5%;
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: 'Outfit', sans-serif;
             color: var(--text-primary);
             font-weight: 700;
@@ -191,9 +200,17 @@
             transition: fill 0.2s, stroke 0.2s;
         }
 
-        .icon-sun { display: none; }
-        :root.light .icon-sun { display: block; }
-        :root.light .icon-moon { display: none; }
+        .icon-sun {
+            display: none;
+        }
+
+        :root.light .icon-sun {
+            display: block;
+        }
+
+        :root.light .icon-moon {
+            display: none;
+        }
 
         /* Left Sidebar Styling */
         .sidebar {
@@ -629,16 +646,19 @@
                 padding: 1.5rem;
             }
 
-            .experience-card, .education-card {
+            .experience-card,
+            .education-card {
                 padding: 1.25rem;
             }
 
-            .card-header, .education-header {
+            .card-header,
+            .education-header {
                 flex-direction: column;
                 gap: 0.2rem;
             }
 
-            .job-date, .school-date {
+            .job-date,
+            .school-date {
                 margin-top: 0.1rem;
             }
         }
@@ -653,7 +673,12 @@
                 padding: 0 !important;
             }
 
-            .bg-blob, .controls, .social-links, footer, .card-skills, .company-logo {
+            .bg-blob,
+            .controls,
+            .social-links,
+            footer,
+            .card-skills,
+            .company-logo {
                 display: none !important;
             }
 
@@ -785,7 +810,8 @@
                 display: none !important;
             }
 
-            .experience-card, .education-card {
+            .experience-card,
+            .education-card {
                 background: none !important;
                 border: none !important;
                 box-shadow: none !important;
@@ -795,7 +821,8 @@
                 transform: none !important;
             }
 
-            .card-header, .education-header {
+            .card-header,
+            .education-header {
                 display: flex !important;
                 justify-content: space-between !important;
                 align-items: baseline !important;
@@ -804,18 +831,21 @@
                 margin-bottom: 4pt !important;
             }
 
-            .company-name, .school-name {
+            .company-name,
+            .school-name {
                 font-size: 12pt !important;
                 color: #000000 !important;
             }
 
-            .job-title, .degree-title {
+            .job-title,
+            .degree-title {
                 font-size: 10.5pt !important;
                 color: #333333 !important;
                 font-weight: 600 !important;
             }
 
-            .job-date, .school-date {
+            .job-date,
+            .school-date {
                 font-size: 9.5pt !important;
                 color: #555555 !important;
             }
@@ -842,6 +872,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Decorative blobs -->
@@ -852,11 +883,13 @@
     <div class="controls no-print">
         <button id="themeToggle" class="btn-icon" aria-label="Toggle dark/light mode">
             <!-- Moon icon -->
-            <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+                fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
             <!-- Sun icon -->
-            <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2"
+                fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="5"></circle>
                 <line x1="12" y1="1" x2="12" y2="3"></line>
                 <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -869,7 +902,8 @@
             </svg>
         </button>
         <button onclick="window.print()" class="btn-icon" aria-label="Print or Save PDF">
-            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 6 2 18 2 18 9"></polyline>
                 <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
                 <rect x="6" y="14" width="12" height="8"></rect>
@@ -878,27 +912,35 @@
     </div>
 
     <div class="app-container">
-        
+
         <!-- Left Column: Bio & Skills -->
         <aside class="sidebar">
             <header class="profile-header">
                 <h1 class="profile-name">Farzad Tabashir</h1>
                 <div class="profile-title">Senior Android Engineer</div>
-                
+
                 <div class="social-links no-print">
                     <a href="https://github.com/ftabashir" target="_blank" class="social-icon" aria-label="GitHub">
-                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
                         </svg>
                     </a>
-                    <a href="https://stackoverflow.com/users/2700239/fartab" target="_blank" class="social-icon" aria-label="StackOverflow">
+                    <a href="https://stackoverflow.com/users/2700239/fartab" target="_blank" class="social-icon"
+                        aria-label="StackOverflow">
                         <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                            <path d="M18.986 21.865v-6.435h2.24v8.675H2.774v-8.675h2.24v6.435h13.972zm-12.87-3.412h11.758v-2.24H6.116v2.24zm.446-5.07l11.406 2.76 2.227-2.18-11.405-2.76-2.228 2.18zm1.96-4.664l10.024 6.09 1.185-1.954-10.024-6.09-1.185 1.954zm3.623-4.048l7.636 8.784 1.702-1.48-7.636-8.784-1.702 1.48zm5.728-3.064l-4.71 10.632 2.053.91 4.71-10.632-2.053-.91z"/>
+                            <path
+                                d="M18.986 21.865v-6.435h2.24v8.675H2.774v-8.675h2.24v6.435h13.972zm-12.87-3.412h11.758v-2.24H6.116v2.24zm.446-5.07l11.406 2.76 2.227-2.18-11.405-2.76-2.228 2.18zm1.96-4.664l10.024 6.09 1.185-1.954-10.024-6.09-1.185 1.954zm3.623-4.048l7.636 8.784 1.702-1.48-7.636-8.784-1.702 1.48zm5.728-3.064l-4.71 10.632 2.053.91 4.71-10.632-2.053-.91z" />
                         </svg>
                     </a>
-                    <a href="https://www.linkedin.com/in/farzad-tabashir" target="_blank" class="social-icon" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <a href="https://www.linkedin.com/in/farzad-tabashir" target="_blank" class="social-icon"
+                        aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
                             <rect x="2" y="9" width="4" height="12"></rect>
                             <circle cx="4" cy="4" r="2"></circle>
                         </svg>
@@ -908,14 +950,16 @@
 
             <div class="contact-info">
                 <div class="contact-item">
-                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                         <circle cx="12" cy="10" r="3"></circle>
                     </svg>
                     <span>Berlin, Germany</span>
                 </div>
                 <div class="contact-item">
-                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                         <polyline points="22,6 12,13 2,6"></polyline>
                     </svg>
@@ -926,7 +970,11 @@
             <section>
                 <h2 class="sidebar-section-title">Profile</h2>
                 <p class="profile-summary">
-                    Senior Android Engineer with <span id="years-of-experience">11</span>+ years of experience building consumer Android applications across food delivery, maps, mobility, travel, grocery, and AR. Strong in Kotlin, Jetpack Compose, Clean Architecture, performance optimization, maps/location experiences, GraphQL migrations, and quality automation. Proven record reducing app latency and API costs, strengthening modular codebases, and mentoring engineers on products used by millions of users.
+                    Senior Android Engineer with <span id="years-of-experience">11</span>+ years of experience building
+                    consumer Android applications across food delivery, maps, mobility, travel, grocery, and AR. Strong
+                    in Kotlin, Jetpack Compose, Clean Architecture, performance optimization, maps/location experiences,
+                    GraphQL migrations, and quality automation. Proven record reducing app latency and API costs,
+                    strengthening modular codebases, and mentoring engineers on products used by millions of users.
                 </p>
             </section>
 
@@ -943,7 +991,7 @@
 
         <!-- Right Column: Timeline & Education -->
         <main class="main-content" id="mainContent">
-            
+
             <section>
                 <h2 class="section-title">Experience</h2>
                 <div class="timeline" id="experienceTimeline">
@@ -965,7 +1013,7 @@
             </section>
 
         </main>
-        
+
     </div>
 
     <footer class="no-print">
@@ -1107,7 +1155,7 @@
             resumeData.experience.forEach((job, index) => {
                 const item = document.createElement('div');
                 item.className = 'timeline-item';
-                
+
                 // Map skills to lower/normalized version for comparison
                 const jobSkillsJson = JSON.stringify(job.skills);
 
@@ -1139,7 +1187,7 @@
         // Toggle Skill Filter
         function toggleSkillFilter(skill, badgeElement) {
             const isRemoving = activeSkillFilter === skill;
-            
+
             // Remove active status from all badges
             document.querySelectorAll('.skill-tag').forEach(b => b.classList.remove('active'));
 
@@ -1151,7 +1199,7 @@
                 activeSkillFilter = skill;
                 badgeElement.classList.add('active');
                 mainContent.classList.add('has-highlight');
-                
+
                 // Highlight jobs matching the skill
                 document.querySelectorAll('.experience-card').forEach(card => {
                     const skills = JSON.parse(card.getAttribute('data-skills') || '[]');
@@ -1174,7 +1222,7 @@
         function initTheme() {
             const savedTheme = localStorage.getItem('theme');
             const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-            
+
             if (savedTheme === 'light' || (!savedTheme && systemPrefersLight)) {
                 document.documentElement.classList.add('light');
             } else {
@@ -1206,4 +1254,5 @@
         renderTimeline();
     </script>
 </body>
+
 </html>
